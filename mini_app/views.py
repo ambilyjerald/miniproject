@@ -14,3 +14,11 @@ def notify(request):
             obj.save()
             return redirect("/")
     return render(request,'registration.html',{'regkey':data})
+def data(request, todo=None):
+    todo=todo.objects.all()
+    return render(request,'tables.html',{'todokey':todo})
+def dash(request):
+    return render(request,'dashboard.html')
+
+def login_page(request):
+    return render(request,'login.html')
